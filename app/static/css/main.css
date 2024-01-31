@@ -1,0 +1,114 @@
+body {
+    background: #f8d2d0;
+    margin: 0px;
+}
+
+.pic {
+    background-image: url(img/Guchip.png);
+    background-size: 160px;
+    height: 160px;
+    width: 160px;
+    background-repeat: no-repeat;
+    margin-bottom: -30px;
+}
+
+.side_menu-maru1 {
+    background-color: #5408FF;
+    opacity: 0.5;
+    height: 80px;
+    width: 80px;
+    border-radius: 100px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.side_menu-maru1_2 {
+    background-color: #B100FF;
+    opacity: 0.5;
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    margin-top: -90px;
+    margin-left: 50px;
+}
+
+.home {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    margin-top: 75px;
+    margin-left: 40px;
+    z-index: 3;
+}
+
+.side_menu-maru2 {
+    background-color: #00E348;
+    opacity: 0.5;
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.side_menu-maru2_2 {
+    background-color: #6FFF75;
+    opacity: 0.5;
+    height: 80px;
+    width: 80px;
+    border-radius: 100px;
+    margin-top: -90px;
+    margin-left: 80px;
+}
+
+.side_menu-maru3 {
+    background-color: #FE4ACB;
+    opacity: 0.5;
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+.side_menu-maru3_2 {
+    background-color: #FF3697;
+    opacity: 0.5;
+    height: 80px;
+    width: 80px;
+    border-radius: 100px;
+    margin-top: -80px;
+    margin-left: 20px;
+}
+
+.option {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 35px;
+    color: white;
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 40px;
+    z-index: 3;
+}
+
+.side_menu-maru4 {
+    background-color: #79A8A9;
+    opacity: 0.5;
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+.side_menu-maru4_2 {
+    background-color: #709495;
+    opacity: 0.5;
+    height: 80px;
+    width: 80px;
+    border-radius: 100px;
+    margin-top: -80px;
+    margin-left: 20px;
+}
+
