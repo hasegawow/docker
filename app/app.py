@@ -1,39 +1,45 @@
 from flask import Flask, render_template, request
+
+## データベースに接続するためのオブジェクトを作成
 from .models.database import init_db, db
-from .models.post import Post
-
-app = Flask(__name__)
-
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-SQLALCHEMY_TRACK_MODIFICATIONS = False
-SQLALCHEMY_ECHO = False
+from .models.tables import Post
 
 
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{user}:{password}@{host}/{db_name}'.format(**{
-    'user':'gawa',
-    'password':'root',
-    'host':'localhost',
-    'db_name':'mysql_database'
-})
+def create_app():
+    app = Flask(__name__)
 
-@app.route("/")
-def index():
-    return render_template('main.html')
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    app.config["SQLALCHEMY_ECHO"] = False
 
-@app.route("/sub")
-def sub():
-    return render_template('sub.html')
-
+    ## DBに接続するための設定、.envの内容と合わせる
+    app.config[
+        "SQLALCHEMY_DATABASE_URI"
+    ] = "mysql+pymysql://{user}:{password}@{host}/{db_name}".format(
+        **{"user": "gawa", "password": "gawa", "host": "localhost", "db_name": "gawadb"}
+    )
+    init_db(app)
 
 
-if __name__ == '__main__':
-    app.run(debug=True, port=5002, host='0.0.0.0')
+    @app.route("/")
+    def index():
+        return render_template("main.html")
+
+    @app.route("/sub")
+    def sub():
+        return render_template("sub.html")
+
+    return app
+
+
+app = create_app()
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5002, host="0.0.0.0")
 
 
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # db = SQLAlchemy(app)
 # migrate = Migrate(app, db)
-
 
 
 # class User(db.Model):
@@ -49,4 +55,3 @@ if __name__ == '__main__':
 #     body = db.Column(db.String(500), nullable=False)
 #     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 #     user = db.relationship("User", backref="posts", lazy="True")
-

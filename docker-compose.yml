@@ -1,21 +1,22 @@
 version: "3"
 services:
   web:
-    image: python:latest
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile
     container_name: "gawa-python3"
     depends_on:
       - db
-    command: python3 app/app.py
     volumes:
       - ./app:/app
     ports:
       - "5002:5002"
+    command: flask run
     tty: true
   db:
     image: mysql:latest
     container_name: "gawa-mysql"
     ports:
-      - "5050:5050"
+      - "3306:3306"
     env_file:
       - .env
