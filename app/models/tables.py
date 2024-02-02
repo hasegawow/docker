@@ -1,5 +1,6 @@
-from database import db
+from .database import db
 from datetime import datetime
+# タイムゾーン用のライブラリ
 import pytz
 
 class Post(db.Model):

@@ -13,10 +13,11 @@
 
 FROM python:3
 
+WORKDIR /app
+
 RUN pip install flask
 RUN pip install Flask-Migrate
 RUN pip install pymysql
 RUN pip install flask_SQLalchemy
 RUN pip install pytz
 
-COPY . /app/
